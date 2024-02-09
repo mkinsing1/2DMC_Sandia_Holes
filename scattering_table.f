@@ -12,9 +12,11 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        
        common    
      &/select_acouctic/acoustic_scattering
-     &/select_intervalley_1/intervalley_zero_g
+C     &/select_intervalley_1/intervalley_zero_g
      &/select_intervalley_2/intervalley_zero_f
      &/select_sr/surface_roughness
+     &/select_alloy/alloy_disorder
+     &/select_coulomb/coulomb_scattering
      &/sigma_acoustic/sigma_acoustic
      &/coulomb/doping_density(5),Energy_debye(5)
      &/Def_pot_1/DefPot_zero_g
@@ -88,29 +90,52 @@ C    Surface-roughness scattering rate
                   
       endif             
       
-C    Intervalley scattering: zero-order interaction (g-process)
+C    Alloy disorder scattering rate
 
-      if(intervalley_zero_g.eq.1)then
-         w0 = phonon_zero_g
-         coupling_constant = DefPot_zero_g
-         final_valleys = 1.D0
+      if(alloy_disorder.eq.1)then
+         coupling_constant = sigma_alloy_scatter
          i_mech = 1
-        
+         
          init_valley = 1
-         ifin_valley = 1    
-         call intervalley(n_lev,w0,
-     1                    init_valley, ifin_valley)
+         ifin_valley = 1
+         final_valleys = 1.D0
+         call alloy_scatter(n_lev,init_valley,ifin_valley)
+
          init_valley = 2
          ifin_valley = 2
-         call intervalley(n_lev,w0,
-     1                    init_valley, ifin_valley)
-     
-         init_valley = 3
-         ifin_valley = 3 
-         call intervalley(n_lev,w0,
-     1                    init_valley, ifin_valley)        
+         final_valleys = 1.D0
+         call alloy_scatter(n_lev,init_valley,ifin_valley)
          
+         init_valley = 3
+         ifin_valley = 3
+         final_valleys = 1.D0
+         call alloy_scatter(n_lev,init_valley,ifin_valley)
+                  
       endif
+      
+C    Intervalley scattering: zero-order interaction (g-process)
+C
+C      if(intervalley_zero_g.eq.1)then
+C         w0 = phonon_zero_g
+C         coupling_constant = DefPot_zero_g
+C         final_valleys = 1.D0
+C         i_mech = 1
+C        
+C         init_valley = 1
+C         ifin_valley = 1    
+C         call intervalley(n_lev,w0,
+C     1                    init_valley, ifin_valley)
+C         init_valley = 2
+C         ifin_valley = 2
+C         call intervalley(n_lev,w0,
+C     1                    init_valley, ifin_valley)
+C     
+C         init_valley = 3
+C         ifin_valley = 3 
+C         call intervalley(n_lev,w0,
+C     1                    init_valley, ifin_valley)        
+C         
+C      endif
 
 C    Intervalley scattering: zero-order interaction (f-process)
 

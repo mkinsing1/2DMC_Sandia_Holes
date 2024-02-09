@@ -21,9 +21,11 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
      &/time_1/dt,dtau,tot_time
      &/force/fx,fy
      &/select_acouctic/acoustic_scattering
-     &/select_intervalley_1/intervalley_zero_g
+C     &/select_intervalley_1/intervalley_zero_g
      &/select_intervalley_2/intervalley_zero_f
      &/select_sr/surface_roughness
+     &/select_alloy/alloy_disorder
+     &/select_coulomb/coulomb_scattering
      &/sigma_acoustic/sigma_acoustic
      &/Def_pot_1/DefPot_zero_g
      &/Def_pot_2/DefPot_zero_f
@@ -80,9 +82,11 @@ C      Define parameters for the scattering table
 C      Select scattering mechanisms
 
        acoustic_scattering = 1
-       intervalley_zero_g = 1
+C       intervalley_zero_g = 1  (Not needed becuase no degeneracies for HH,LL,SO hole bands)
        intervalley_zero_f = 1
        surface_roughness = 1
+C      alloy_disorder = 1  (Need to add)
+C      coulomb_scattering = 1 (Need to add)
 
 C      Define coupling constants
 
