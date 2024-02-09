@@ -32,6 +32,16 @@ C                            - Intervalley f-phonons
 C                            - Coulomb scattering
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 
 
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C    CONVERT THIS CODE FROM ELECTRONS IN SI TO HOLES IN SI
+C     ToDo Changes:          - 3 Valleys are HH,LH,SO bands
+C                              - HH=1, LH=2, SO=3     
+C                            - Degeneracies == 1 (change final valleys to 1)
+C                            - Change Phonon energies
+C                            - Add Alloy Disorder scattering    
+C                            - Add Coulomb scattering
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 
+
 C    Acoustic phonons scattering rate
 
       if(acoustic_scattering.eq.1)then
@@ -107,34 +117,35 @@ C    Intervalley scattering: zero-order interaction (f-process)
       if(intervalley_zero_f.eq.1)then
          w0 = phonon_zero_f
          coupling_constant = DefPot_zero_f
-         final_valleys = 2.D0
+C         final_valleys = 2.D0
+         final_valleys = 1.D0
          i_mech = 2
-
+C HH to LH band
          init_valley = 1
          ifin_valley = 2    
          call intervalley(n_lev,w0,
      1                    init_valley, ifin_valley)
-     
+C HH to SO band
          init_valley = 1
          ifin_valley = 3    
          call intervalley(n_lev,w0,
      1                    init_valley, ifin_valley)   
-      
+C LH to HH band
          init_valley = 2
          ifin_valley = 1    
          call intervalley(n_lev,w0,
      1                    init_valley, ifin_valley)
-     
+C LH to SO band 
          init_valley = 2
          ifin_valley = 3    
          call intervalley(n_lev,w0,
      1                    init_valley, ifin_valley) 
-     
+C SO to HH band     
          init_valley = 3
          ifin_valley = 1    
          call intervalley(n_lev,w0,
      1                    init_valley, ifin_valley)
-     
+C SO to LH band     
          init_valley = 3
          ifin_valley = 2    
          call intervalley(n_lev,w0,
