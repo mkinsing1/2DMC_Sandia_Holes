@@ -1,0 +1,49 @@
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\acoustic.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source acoustic.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\drift.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source drift.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\free_flight_scatter.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source free_flight_scatter.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\init_distribution.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source init_distribution.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\intervalley.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source intervalley.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\main.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source main.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\read_wavefunc.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source read_wavefunc.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\readin.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source readin.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\renormailze_table.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source renormailze_table.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\scatter_carrier.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source scatter_carrier.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\scattering_table.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source scattering_table.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\screen.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source screen.f
+101.10.31 11:18 A d:\dragica\code\2D_MonteCarlo\source\surface_roughness.f <-- enws781-dragica /home/eeefac/vasilesk/2D_MonteCarlo/source surface_roughness.f
+2002.05.25 12:21 A D:\2DMC\source\ws_ftp.log <-- Dragica Work /d:/dragica/code/2d_montecarlo/source ws_ftp.log
+2002.05.25 12:24 A D:\2DMC\source\acoustic.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source acoustic.f
+2002.05.25 12:25 A D:\2DMC\source\drift.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source drift.f
+2002.05.25 12:25 A D:\2DMC\source\free_flight_scatter.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source free_flight_scatter.f
+2002.05.25 12:25 A D:\2DMC\source\init_distribution.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source init_distribution.f
+2002.05.25 12:25 A D:\2DMC\source\intervalley.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source intervalley.f
+2002.05.25 12:25 A D:\2DMC\source\main.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source main.f
+2002.05.25 12:25 A D:\2DMC\source\read_wavefunc.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source read_wavefunc.f
+2002.05.25 12:25 A D:\2DMC\source\readin.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source readin.f
+2002.05.25 12:25 A D:\2DMC\source\renormailze_table.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source renormailze_table.f
+2002.05.25 12:25 A D:\2DMC\source\scatter_carrier.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source scatter_carrier.f
+2002.05.25 12:25 A D:\2DMC\source\scattering_table.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source scattering_table.f
+2002.05.25 12:25 A D:\2DMC\source\screen.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source screen.f
+2002.05.25 12:25 A D:\2DMC\source\surface_roughness.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source surface_roughness.f
+2002.05.25 12:25 A D:\2DMC\source\WS_FTP.LOG --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source WS_FTP.LOG
+2002.05.25 12:25 A D:\2DMC\source\readin.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source readin.f
+2002.05.25 12:32 A D:\2DMC\source\read_wavefunc.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source read_wavefunc.f
+2002.05.25 12:37 A D:\2DMC\source\read_wavefunc.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source read_wavefunc.f
+2002.05.25 12:39 A D:\2DMC\source\readin.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source readin.f
+2002.05.25 12:49 A D:\2DMC\source\read_wavefunc.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source read_wavefunc.f
+2002.05.25 12:55 A D:\2DMC\source\read_wavefunc.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source read_wavefunc.f
+2002.05.25 12:56 A D:\2DMC\source\readin.f --> enws781.eas.asu.edu /home/eeefac/vasilesk/2DMC/source readin.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\acoustic.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg acoustic.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\drift.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg drift.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\free_flight_scatter.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg free_flight_scatter.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\init_distribution.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg init_distribution.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\intervalley.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg intervalley.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\main.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg main.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\read_wavefunc.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg read_wavefunc.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\readin.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg readin.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\renormailze_table.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg renormailze_table.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\scatter_carrier.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg scatter_carrier.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\scattering_table.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg scattering_table.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\screen.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg screen.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\surface_roughness.f --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg surface_roughness.f
+2002.06.02 17:37 A D:\2DMC\source_mc_nodeg\WS_FTP.LOG --> 129.219.30.185 /d:/dragica/proposals/funded projects/muri_97(4)/hawaii_nano_june_2002/2dmc/source_mc_nodeg WS_FTP.LOG

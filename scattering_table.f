@@ -1,0 +1,145 @@
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C
+C       SUBROUTINE THAT CREATES THE SCATTERING TABLE
+C       flag_mech = 1 ==> isotropic scattering process
+C       flag_mech = 2 ==> polar optical phonons
+C
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+       subroutine sc_table(n_lev)
+       implicit real*8 (a-h, o-z)
+
+       integer n_lev, i_mech
+       
+       common    
+     &/select_acouctic/acoustic_scattering
+     &/select_intervalley_1/intervalley_zero_g
+     &/select_intervalley_2/intervalley_zero_f
+     &/select_sr/surface_roughness
+     &/sigma_acoustic/sigma_acoustic
+     &/coulomb/doping_density(5),Energy_debye(5)
+     &/Def_pot_1/DefPot_zero_g
+     &/Def_pot_2/DefPot_zero_f
+     &/interval_phonons_1/phonon_zero_g
+     &/interval_phonons_2/phonon_zero_f
+     &/intervalley1/coupling_constant
+     &/intervalley2/final_valleys,i_mech
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C     CREATE THE SCATTERING TABLE FOR EACH REGION
+C     Scattering mechanism:  - Acoustic phonons
+C                            - Intervalley g-phonons
+C                            - Intervalley f-phonons    
+C                            - Coulomb scattering
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 
+
+C    Acoustic phonons scattering rate
+
+      if(acoustic_scattering.eq.1)then
+         coupling_constant = sigma_acoustic
+         i_mech = 1
+         
+         init_valley = 1
+         ifin_valley = 1
+         final_valleys = 1.D0
+         call acoustic_scatt(n_lev,init_valley,ifin_valley)
+
+         init_valley = 2
+         ifin_valley = 2
+         final_valleys = 1.D0
+         call acoustic_scatt(n_lev,init_valley,ifin_valley)
+         
+         init_valley = 3
+         ifin_valley = 3
+         final_valleys = 1.D0
+         call acoustic_scatt(n_lev,init_valley,ifin_valley)
+                  
+      endif
+      
+C    Surface-roughness scattering rate
+
+      if(surface_roughness.eq.1)then
+      
+         i_mech = 3
+         
+         init_valley = 1
+         ifin_valley = 1
+         final_valleys = 1.D0
+         call roughness(n_lev,init_valley,ifin_valley)
+
+         init_valley = 2
+         ifin_valley = 2
+         final_valleys = 1.D0
+         call roughness(n_lev,init_valley,ifin_valley)
+         
+         init_valley = 3
+         ifin_valley = 3
+         final_valleys = 1.D0
+         call roughness(n_lev,init_valley,ifin_valley)
+                  
+      endif             
+      
+C    Intervalley scattering: zero-order interaction (g-process)
+
+      if(intervalley_zero_g.eq.1)then
+         w0 = phonon_zero_g
+         coupling_constant = DefPot_zero_g
+         final_valleys = 1.D0
+         i_mech = 1
+        
+         init_valley = 1
+         ifin_valley = 1    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)
+         init_valley = 2
+         ifin_valley = 2
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)
+     
+         init_valley = 3
+         ifin_valley = 3 
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)        
+         
+      endif
+
+C    Intervalley scattering: zero-order interaction (f-process)
+
+      if(intervalley_zero_f.eq.1)then
+         w0 = phonon_zero_f
+         coupling_constant = DefPot_zero_f
+         final_valleys = 2.D0
+         i_mech = 2
+
+         init_valley = 1
+         ifin_valley = 2    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)
+     
+         init_valley = 1
+         ifin_valley = 3    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)   
+      
+         init_valley = 2
+         ifin_valley = 1    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)
+     
+         init_valley = 2
+         ifin_valley = 3    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley) 
+     
+         init_valley = 3
+         ifin_valley = 1    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)
+     
+         init_valley = 3
+         ifin_valley = 2    
+         call intervalley(n_lev,w0,
+     1                    init_valley, ifin_valley)   
+      endif
+        
+      return
+      end
