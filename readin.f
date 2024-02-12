@@ -10,7 +10,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        common
      &/ran_var/iso
      &/pi/pi,two_pi
-     &/fund_const/q,h,kb,am0,eps_0 
+     &/fund_const/q,h,hbar,kb,am0,eps_0 
      &/dri/qh
      &/temp/tem,Vt
      &/mass/smh(3),hhm(3)
@@ -45,6 +45,7 @@ C      Define fundamental constants and general parameters
        eps_0=8.85419D-12
        kb=1.38066D-23
        pi=3.161592654D0
+       hbar=h/2.D0/pi
        two_pi = 2.D0*pi
 
 C      Define time step and maximum simulation time

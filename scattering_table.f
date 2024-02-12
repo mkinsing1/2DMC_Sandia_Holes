@@ -18,6 +18,7 @@ C     &/select_intervalley_1/intervalley_zero_g
      &/select_alloy/alloy_disorder
      &/select_coulomb/coulomb_scattering
      &/sigma_acoustic/sigma_acoustic
+     &/pot_alloy/pot_alloy
      &/coulomb/doping_density(5),Energy_debye(5)
      &/Def_pot_1/DefPot_zero_g
      &/Def_pot_2/DefPot_zero_f
@@ -93,23 +94,23 @@ C    Surface-roughness scattering rate
 C    Alloy disorder scattering rate
 
       if(alloy_disorder.eq.1)then
-         coupling_constant = sigma_alloy_scatter
+         coupling_constant = pot_alloy
          i_mech = 1
          
          init_valley = 1
          ifin_valley = 1
          final_valleys = 1.D0
-         call alloy_scatter(n_lev,init_valley,ifin_valley)
+         call alloy_scatt(n_lev,init_valley,ifin_valley)
 
          init_valley = 2
          ifin_valley = 2
          final_valleys = 1.D0
-         call alloy_scatter(n_lev,init_valley,ifin_valley)
+         call alloy_scatt(n_lev,init_valley,ifin_valley)
          
          init_valley = 3
          ifin_valley = 3
          final_valleys = 1.D0
-         call alloy_scatter(n_lev,init_valley,ifin_valley)
+         call alloy_scatt(n_lev,init_valley,ifin_valley)
                   
       endif
       

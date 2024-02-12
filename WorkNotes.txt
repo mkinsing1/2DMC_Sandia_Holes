@@ -3,7 +3,7 @@
 2024_02_09
 1) scattering_table.f
    - Changed degeneracies to 1
-   - Map HH=1,LH=2,SO=3
+   - Mapped HH=1,LH=2,SO=3
    - Added variables and function calls for alloy_disorder and coulomb_scattering
      ToDo: Write functions for alloy_disorder and coulomb_scattering  
      ToDo: Alloy disorder scattering coupling constant (sigma_alloy_scattering)
