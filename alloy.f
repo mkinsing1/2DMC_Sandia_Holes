@@ -13,6 +13,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
      &/temp/tem,Vt
      &/fund_const/pi,q,h,hbar,kb,am0,eps_0 
      &/nonp/af,af2,af4
+     &/sigma_alloy/pot_alloy,p_alloy
      &/scatt_par/emax,de,w(3,10,50),tau_max(3,10)
      &/scatt_par2/flag_mech(3,10,50)
      &/scatt_par3/subband(3,10,50)
@@ -29,12 +30,15 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 C    Calculate constants
 
       final_mass = r_md(ifin_valley)
-     ! const = final_mass*tem*kb/h*(coupling_constant**2)
-     !1        *final_valleys*q/h*q/h/density/sound_velocity/
-     !1        sound_velocity
-      const = 2.D0*pi/hbar*(coupling_constant**2)
+      ! const = final_mass*tem*kb/h*(coupling_constant**2)
+      !1        *final_valleys*q/h*q/h/density/sound_velocity/
+      !1        sound_velocity
+      ! const = 2.D0*pi/hbar*(coupling_constant**2)*q*q
+      !1        *p_alloy*(1-p_alloy)
+      !1        *0.5D0*final_mass/pi/hbar**2.D0 !1/2*DOS_2D (independent of energy)
+      const = 2.D0*pi/hbar*(coupling_constant**2)*q*q
      1        *p_alloy*(1-p_alloy)
-     1        *0.5D0*final_mass/pi/hbar**2.D0*energy !1/2*DOS_2D
+     1        *0.5D0*final_mass/pi/hbar**2.D0 !1/2*DOS_2D (independent of energy)
       
       do isub = 1, k_sub(init_valley)
       do jsub = 1, k_sub(ifin_valley)
@@ -57,6 +61,11 @@ C    Calculate constants
          
          ii = i_count(init_valley,isub)   
          scatt_table(init_valley,isub,ii,i) = alloy_rate
+         if (init_valley.eq.1) then
+           if (isub.eq.1) then
+             write(86,*) scatt_table(1,1,ii,i)
+           endif
+         endif
          
          enddo
          

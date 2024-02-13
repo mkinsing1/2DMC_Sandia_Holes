@@ -27,6 +27,7 @@ C     &/select_intervalley_1/intervalley_zero_g
      &/select_alloy/alloy_disorder
      &/select_coulomb/coulomb_scattering
      &/sigma_acoustic/sigma_acoustic
+     &/sigma_alloy/pot_alloy,p_alloy
      &/Def_pot_1/DefPot_zero_g
      &/Def_pot_2/DefPot_zero_f
      &/interval_phonons_1/phonon_zero_g
@@ -86,12 +87,16 @@ C      Select scattering mechanisms
 C       intervalley_zero_g = 1  (Not needed becuase no degeneracies for HH,LL,SO hole bands)
        intervalley_zero_f = 1
        surface_roughness = 1
-C      alloy_disorder = 1  (Need to add)
+       alloy_disorder = 0  
 C      coulomb_scattering = 1 (Need to add)
+
+C      Define the alloy concentration
+       p_alloy = 0.5 
 
 C      Define coupling constants
 
        sigma_acoustic = 9.D0  !  [eV]
+       pot_alloy = 1.5D0  !  [eV]
        DefPot_zero_g = 5.23D10   ! [eV/m]
        DefPot_zero_f = 5.23D10   ! [eV/m]
    

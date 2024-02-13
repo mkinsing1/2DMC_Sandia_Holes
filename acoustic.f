@@ -55,6 +55,11 @@ C    Calculate constants
          
          ii = i_count(init_valley,isub)   
          scatt_table(init_valley,isub,ii,i) = acoustic_rate
+         if (init_valley.eq.1) then
+           if (isub.eq.1) then
+             write(85,*) scatt_table(1,1,ii,i)
+           endif
+         endif
          
          enddo
          

@@ -18,7 +18,7 @@ C     &/select_intervalley_1/intervalley_zero_g
      &/select_alloy/alloy_disorder
      &/select_coulomb/coulomb_scattering
      &/sigma_acoustic/sigma_acoustic
-     &/pot_alloy/pot_alloy
+     &/sigma_alloy/pot_alloy,p_alloy
      &/coulomb/doping_density(5),Energy_debye(5)
      &/Def_pot_1/DefPot_zero_g
      &/Def_pot_2/DefPot_zero_f
