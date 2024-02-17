@@ -11,7 +11,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
            
        common 
      &/temp/tem,Vt
-     &/fund_const/q,h,kb,am0,eps_0 
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0 
      &/nonp/af,af2,af4
      &/scatt_par/emax,de,w(3,10,50),tau_max(3,10)
      &/scatt_par2/flag_mech(3,10,50)
@@ -33,6 +33,9 @@ C    Calculate constants
       const = final_mass*tem*kb/h*(coupling_constant**2)
      1        *final_valleys*q/h*q/h/density/sound_velocity/
      1        sound_velocity
+      write(88,*) 'new iteration'
+      write(88,*) const
+      write(88,*) final_mass
       
       do isub = 1, k_sub(init_valley)
       do jsub = 1, k_sub(ifin_valley)

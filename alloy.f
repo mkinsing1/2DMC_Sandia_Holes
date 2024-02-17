@@ -11,7 +11,8 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
            
        common 
      &/temp/tem,Vt
-     &/fund_const/pi,q,h,hbar,kb,am0,eps_0 
+     &/pi/pi,two_pi
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0 
      &/nonp/af,af2,af4
      &/sigma_alloy/pot_alloy,p_alloy
      &/scatt_par/emax,de,w(3,10,50),tau_max(3,10)
@@ -33,12 +34,19 @@ C    Calculate constants
       ! const = final_mass*tem*kb/h*(coupling_constant**2)
       !1        *final_valleys*q/h*q/h/density/sound_velocity/
       !1        sound_velocity
-      ! const = 2.D0*pi/hbar*(coupling_constant**2)*q*q
-      !1        *p_alloy*(1-p_alloy)
-      !1        *0.5D0*final_mass/pi/hbar**2.D0 !1/2*DOS_2D (independent of energy)
-      const = 2.D0*pi/hbar*(coupling_constant**2)*q*q
+      const = 2.D0*pi/hbar*a0*a0*a0*(coupling_constant**2.D0)*q*q
      1        *p_alloy*(1-p_alloy)
-     1        *0.5D0*final_mass/pi/hbar**2.D0 !1/2*DOS_2D (independent of energy)
+     1        *0.5D0*final_mass/pi/hbar/hbar !1/2*DOS_2D (independent of energy)
+      !const value is too high (~E36)
+      !write(87,*) 'new iteration'
+      !write(87,*) const
+      !write(87,*) 2.D0*pi/hbar*(coupling_constant**2.D0)*q*q
+      !write(87,*) p_alloy*(1-p_alloy)
+      !write(87,*) final_mass !1/2*DOS_2D (independent of energy)
+      !write(87,*) 0.5D0*final_mass/pi/hbar/hbar !1/2*DOS_2D (independent of energy)
+      !write(87,*) (coupling_constant**2.D0)*q*q
+      !write(87,*) coupling_constant**2.D0,q
+      !write(*,*) coupling_constant**2.D0,q
       
       do isub = 1, k_sub(init_valley)
       do jsub = 1, k_sub(ifin_valley)

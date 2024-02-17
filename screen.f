@@ -17,7 +17,7 @@
        
         
        common
-     &/fund_const/q,h,kb,am0,eps_0
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0
      &/temp/tem,Vt
      &/mas_dos/r_md(3)
      &/dielec_func/eps_high

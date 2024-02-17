@@ -10,7 +10,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       real*8 kb
            
        common
-     &/fund_const/q,h,kb,am0,eps_0 
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0 
      &/pi/pi,two_pi
      &/scatt_par/emax,de,w(3,10,50),tau_max(3,10)
      &/scatt_par2/flag_mech(3,10,50)

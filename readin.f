@@ -3,14 +3,32 @@ C      READ INPUT PARAMETERS
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        subroutine readin(n_lev)
        implicit real*8 (a-h, o-z)
-       
+C       implicit none
+
        real*8 kb, am0
        real*8 fx,fy
+C       real*8 iso,am0,h,q,qh,eps_0,kb,pi,hbar,two_pi
+C       real*8 dt,tot_time
+C       real*8 tem,Vt
+C       real*8 fx,fy
+C       real*8 eps_high,eps_ox
+C       real*8 density,sound_velocity
+C       real*8 emax,de
+C       integer acoustic_scattering,intervalley_zero_f
+C       integer surface_roughness,alloy_disorder,coulomb_scattering
+C       real*8 p_alloy
+C       real*8 sigma_acoustic,pot_alloy,DefPot_zero_g,DefPot_zero_f
+C       real*8 phonon_zero_g,phonon_zero_f
+C       real*8 am_l,am_t
+C       real*8 r_md(3),r_mc(3)
+C       real*8 smh(3),hhm(3) 
+C       real*8 delta,corr_length
+
 
        common
      &/ran_var/iso
      &/pi/pi,two_pi
-     &/fund_const/q,h,hbar,kb,am0,eps_0 
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0 
      &/dri/qh
      &/temp/tem,Vt
      &/mass/smh(3),hhm(3)
@@ -38,6 +56,7 @@ C     &/select_intervalley_1/intervalley_zero_g
 
 C      Define fundamental constants and general parameters
 
+       a0=5.0D-10  !Lattice constant
        iso=1345
        am0=9.11D-31
        h=1.05459D-34
@@ -87,16 +106,16 @@ C      Select scattering mechanisms
 C       intervalley_zero_g = 1  (Not needed becuase no degeneracies for HH,LL,SO hole bands)
        intervalley_zero_f = 1
        surface_roughness = 1
-       alloy_disorder = 0  
+       alloy_disorder = 1  
 C      coulomb_scattering = 1 (Need to add)
 
 C      Define the alloy concentration
-       p_alloy = 0.5 
+       p_alloy = 0.1 
 
 C      Define coupling constants
 
        sigma_acoustic = 9.D0  !  [eV]
-       pot_alloy = 1.5D0  !  [eV]
+       pot_alloy = 1.0D0  !  [eV]
        DefPot_zero_g = 5.23D10   ! [eV/m]
        DefPot_zero_f = 5.23D10   ! [eV/m]
    

@@ -12,7 +12,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
            
        common
      &/temp/tem,Vt
-     &/fund_const/q,h,kb,am0,eps_0 
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0 
      &/scatt_par/emax,de,w(3,10,50),tau_max(3,10)
      &/scatt_par2/flag_mech(3,10,50)
      &/scatt_par3/subband(3,10,50),valley(3,10,50)

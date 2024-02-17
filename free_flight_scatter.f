@@ -18,6 +18,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
      &/particle_atr/kx,ky,iv,is,e
        
       do i = 1, nsim	! loop for all carriers
+      !write(*,*) 'nsim',i,nsim
 
 C     Inverse mapping of particle atributes
 
@@ -41,6 +42,7 @@ C     Initial free-flight of the carriers
            
       if(dte.gt.dt)goto 401
 
+      !write(*,*) 'dte.gt.dt',dte,dt
 C     Free-flight and scatter part
 
 402   dte2=dte

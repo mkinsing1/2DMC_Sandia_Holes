@@ -18,7 +18,7 @@
      &/screening_terms/q_vector(1000),q_max,dq_max,nq_max     
      &/screened_sr_element/screened_sr(3,10,10,1000)     
      &/index/k_sub(3)
-     &/fund_const/q,h,kb,am0,eps_0
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0
      &/pi/pi,two_pi
      &/dielec_func/eps_high
      &/dielec_func_oxide/eps_ox

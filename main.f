@@ -10,9 +10,12 @@ C      nele   => # total number of electrons that are simulated
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 C NEVER NEVER NEVER USE implicit
        implicit real*8 (a-h, o-z)
-       
+C       implicit none      
+
        character*40 file_name
        integer nsim
+C       real*8 time,flag_write
+C       integer j
        
        common
      &/time_1/dt,dtau,tot_time
@@ -61,7 +64,8 @@ C      SAVE HISTOGRAMS
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        subroutine histograms(nsim,file_name)
        implicit real*8 (a-h, o-z)
-       
+C       implicit none
+
        integer nsim
        real*8 kx,ky,e
        character*30 file_name
@@ -107,7 +111,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
        real*8 energy_av(3)
        
        common
-     &/fund_const/q,h,kb,am0,eps_0
+     &/fund_const/a0,q,h,hbar,kb,am0,eps_0
      &/variables/p(20000,3),ip(20000,2),energy(20000)
      &/mas_con/r_mc(3)
      &/mas_dos/r_md(3)
